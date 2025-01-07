@@ -2,14 +2,23 @@
 
 // Time Complexity: O(n)
 // Space Complexity: O(1)
-
-// The approach for normalizing k with mod n is that any rotation over the length of the array
-// would be extra work and decrease inefficency. Example: If there is an array of length 7 and
-// k = 9, we can simply 9 % 7 = 2 giving us total of 2 rotations to solve this example. Additionally,
-// we reverse the initial array using a two pointer helper function and then split the array based on
-// k and reverse the two halves and solving the problem. The overall complexity is O(2n) -> O(n). 
-// Lastly, the space complexity is O(1) because this problem doesnt not declare data structure that
-// would grow as nums grows in size and memory. The temp variable is essentially static in this process.
+//
+// The approach for normalizing k with mod n ensures we avoid redundant rotations.
+// Rotating the array more than its length is unnecessary and inefficient. For example,
+// if we have an array of length 7 and k = 9, we can simplify the problem by calculating
+// k = 9 % 7 = 2. This reduces the rotations needed to just 2, achieving the same result.
+//
+// The solution involves three steps:
+// 1. Reverse the entire array using a two-pointer helper function.
+// 2. Reverse the first k elements to position the rotated portion correctly.
+// 3. Reverse the remaining n - k elements to complete the rotation.
+//
+// The overall complexity is O(2n) -> O(n) because each reversal operation is linear in time.
+//
+// Lastly, the space complexity is O(1) since the solution modifies the array in place.
+// No additional data structures are used that grow with the size of the input.
+// The temporary variable used in the helper function (`temp`) is constant in size and does
+// not depend on the input length, ensuring the memory usage remains constant.
 
 class Solution {
     public void rotate(int[] nums, int k) {
