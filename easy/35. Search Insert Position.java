@@ -1,28 +1,32 @@
-/**
- * Notes:
- *
- * Time Complexity: O(log n)
- * Space Complexity: O(1)
- *
- * This solution uses the Binary Search algorithm to efficiently locate the target value
- * or determine its insertion position in a sorted array. Binary Search repeatedly divides
- * the search range in half, making it logarithmic in time complexity.
- *
- * The solution involves the following steps:
- * 1. Initialize two pointers, `left` (start of the array) and `right` (end of the array).
- * 2. Calculate the middle index, `mid`, and compare `nums[mid]` with the target value.
- * 3. If `nums[mid]` matches the target, return `mid`.
- * 4. If `nums[mid]` is less than the target, adjust `left` to `mid + 1` to search the right half.
- * 5. If `nums[mid]` is greater than the target, adjust `right` to `mid - 1` to search the left half.
- * 6. When the loop ends, `left` will point to the correct insertion position for the target.
- *
- * The overall complexity is O(log n) because the array is repeatedly halved until the search range
- * is reduced to a single element.
- *
- * Lastly, the space complexity is O(1) because the algorithm operates in place without creating
- * additional data structures. All computations are performed using a fixed amount of memory,
- * ensuring constant space usage.
- */
+/*
+Notes:
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+
+This solution uses the Binary Search algorithm to efficiently locate the target value
+or determine its insertion position in a sorted array. Binary Search repeatedly divides
+the search range in half, resulting in logarithmic time complexity.
+
+Steps:
+1. Initialize two pointers:
+   - `left` points to the start of the array.
+   - `right` points to the end of the array.
+2. Calculate the middle index, `mid`, as `mid = left + (right - left) / 2`.
+3. Compare `nums[mid]` with the target:
+   - If `nums[mid]` matches the target, return `mid`.
+   - If `nums[mid]` is less than the target, set `left = mid + 1` to search the right half.
+   - If `nums[mid]` is greater than the target, set `right = mid - 1` to search the left half.
+4. Repeat steps 2 and 3 until the search range is exhausted (i.e., `left > right`).
+5. When the loop ends, `left` will point to the correct insertion position for the target.
+
+Complexity:
+- Time Complexity: O(log n) because the search range is halved with each iteration.
+- Space Complexity: O(1) because the algorithm operates in place, using a constant amount of memory.
+
+This approach is optimal for searching in sorted arrays due to its logarithmic efficiency and minimal space usage.
+*/
+
 
 class Solution {
     public int searchInsert(int[] nums, int target) {
