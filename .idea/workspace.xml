@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d48d53b0-1e9f-4a38-83c9-919f4e31084b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/medium/Binary Tree Right Side View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easy/Counting Bits.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
