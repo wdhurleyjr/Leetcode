@@ -9,21 +9,21 @@ divide-and-conquer sorting algorithm that is often used because of its average-c
 and its in-place sorting capability, making the space complexity minimal.
 
 Algorithm Explanation:
-1. **Divide**:
+1. Divide:
    - Select a pivot element (in this implementation, the last element in the range).
    - Partition the array into two subarrays: one with elements less than or equal to the pivot and another with elements greater than the pivot.
 
-2. **Conquer**:
+2. Conquer:
    - Recursively apply the same process to the subarrays created by partitioning.
 
-3. **Combine**:
+3. Combine:
    - The array is fully sorted once all recursive calls complete.
 
 Key Functions:
-- **`partition`**:
+- `partition`:
    - Rearranges elements in the array such that all elements less than or equal to the pivot are to its left, and all elements greater are to its right.
    - Returns the index of the pivot element after partitioning.
-- **`swap`**:
+- `swap`:
    - Swaps two elements in the array.
 
 Advantages:
