@@ -37,28 +37,27 @@ Edge Cases:
 - Multiple piles with exactly `h` hours: Tests the binary search efficiency.
 */
 
-
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        int minK = 1000000001;
-        int max = findMax(piles);
         int left = 1;
-        int right = max;
+        int right = findMax(piles);
         while(left <= right) {
             int mid = left + (right - left) / 2;
             if(canEatAll(piles, mid, h)) {
-                minK = Math.min(minK, mid);
-                right = mid - 1;
+                // this ensures that mid if valid will be always be considered for the return value k
+                right = mid;
             } else {
                 left = mid + 1;
             }
         }
-        return minK;
+        return right;
     }
     private boolean canEatAll(int[] piles, int k, int h) {
         int count = 0;
         for(int i = 0; i < piles.length; i++) {
             int countPer = (int) Math.ceil(1.0 * piles[i] / k);
+            // for the above calculation I know that I can do piles[i] + k - 1 / k
+            // which will effectively ceil the value
             count += countPer;
         }
         return count <= h;
