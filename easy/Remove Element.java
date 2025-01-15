@@ -17,7 +17,6 @@ Approach:
 4. At the end of the loop, `i` represents the new length of the array without the `val` elements.
 */
 
-
 class Solution {
     public int removeElement(int[] nums, int val) {
         int i = 0;
