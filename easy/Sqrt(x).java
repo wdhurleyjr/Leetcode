@@ -28,7 +28,6 @@ Key Points:
 - Space complexity is constant since the algorithm operates in place without additional data structures.
 */
 
-
 class Solution {
     public int mySqrt(int x) {
         if(x < 2) {
